@@ -610,7 +610,7 @@ namespace Microsoft.Build.UnitTests
                 Environment.SetEnvironmentVariable("MSBuildOldOM", "");
 
                 startDirectory = CopyMSBuild();
-                var msbuildExeName = Path.GetFileName(RunnerUtilities.PathToCurrentlyRunningMsBuildExe);
+                var msbuildExeName = Path.GetFileName(RunnerUtilities.PathToCurrentlyRunningMSBuildExe);
                 var newPathToMSBuildExe = Path.Combine(startDirectory, msbuildExeName);
                 var pathToConfigFile = Path.Combine(startDirectory, msbuildExeName + ".config");
 
@@ -817,7 +817,7 @@ namespace Microsoft.Build.UnitTests
             string output = RunnerUtilities.ExecMSBuild(msbuildParameters, out successfulExit);
             successfulExit.ShouldBeFalse();
 
-            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMsBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
+            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMSBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
         }
 
         /// <summary>
@@ -830,7 +830,7 @@ namespace Microsoft.Build.UnitTests
             File.Exists(_pathToArbitraryBogusFile).ShouldBeTrue();
 
             bool successfulExit;
-            string pathToMSBuildExe = RunnerUtilities.PathToCurrentlyRunningMsBuildExe;
+            string pathToMSBuildExe = RunnerUtilities.PathToCurrentlyRunningMSBuildExe;
             // This @pathToMSBuildExe is used directly with Process, so don't quote it on
             // Unix
             if (NativeMethodsShared.IsWindows)
@@ -841,7 +841,7 @@ namespace Microsoft.Build.UnitTests
             string output = RunnerUtilities.ExecMSBuild(pathToMSBuildExe, msbuildParameters, out successfulExit);
             successfulExit.ShouldBeFalse();
 
-            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMsBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
+            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMSBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
         }
 
         /// <summary>
@@ -855,7 +855,7 @@ namespace Microsoft.Build.UnitTests
 
             try
             {
-                Directory.SetCurrentDirectory(Path.GetDirectoryName(RunnerUtilities.PathToCurrentlyRunningMsBuildExe));
+                Directory.SetCurrentDirectory(Path.GetDirectoryName(RunnerUtilities.PathToCurrentlyRunningMSBuildExe));
 
                 var msbuildParameters = "\"" + _pathToArbitraryBogusFile + "\"" + (NativeMethodsShared.IsWindows ? " /v:diag" : " -v:diag");
 
@@ -868,7 +868,7 @@ namespace Microsoft.Build.UnitTests
                 Directory.SetCurrentDirectory(current);
             }
 
-            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMsBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
+            output.ShouldContain(RunnerUtilities.PathToCurrentlyRunningMSBuildExe + (NativeMethodsShared.IsWindows ? " /v:diag " : " -v:diag ") + _pathToArbitraryBogusFile, Case.Insensitive);
         }
 
         /// <summary>
@@ -2356,7 +2356,7 @@ EndGlobal
             string dest = null;
             try
             {
-                string source = Path.GetDirectoryName(RunnerUtilities.PathToCurrentlyRunningMsBuildExe);
+                string source = Path.GetDirectoryName(RunnerUtilities.PathToCurrentlyRunningMSBuildExe);
                 dest = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
 
                 Directory.CreateDirectory(dest);

@@ -588,7 +588,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
 
                 File.WriteAllText(projectFiles.CreatedFiles[0], import);
 
-                env.SetEnvironmentVariable("MsBuildSkipEagerWildCardEvaluationRegexes", ".*foo.*");
+                env.SetEnvironmentVariable("MSBuildSkipEagerWildCardEvaluationRegexes", ".*foo.*");
 
                 EngineFileUtilities.CaptureLazyWildcardRegexes();
 
@@ -643,7 +643,7 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 {
                     if (cacheFileEnumerations)
                     {
-                        env.SetEnvironmentVariable("MsBuildCacheFileEnumerations", "1");
+                        env.SetEnvironmentVariable("MSBuildCacheFileEnumerations", "1");
                     }
 
                     ObjectModelHelpers.AssertItemEvaluationFromProject(
