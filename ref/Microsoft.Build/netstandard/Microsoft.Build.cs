@@ -505,7 +505,7 @@ namespace Microsoft.Build.Evaluation
         public System.Collections.Generic.IEnumerable<string> Excludes { get { throw null; } }
         public System.Collections.Generic.IEnumerable<string> IncludeGlobs { get { throw null; } }
         public Microsoft.Build.Construction.ProjectItemElement ItemElement { get { throw null; } }
-        public Microsoft.Build.Globbing.IMSBuildGlob MsBuildGlob { get { throw null; } set { } }
+        public Microsoft.Build.Globbing.IMSBuildGlob MSBuildGlob { get { throw null; } set { } }
         public System.Collections.Generic.IEnumerable<string> Removes { get { throw null; } set { } }
     }
     public static partial class MatchOnMetadataConstants

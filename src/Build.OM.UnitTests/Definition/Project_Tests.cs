@@ -3733,7 +3733,7 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
             var getAllGlobsResult = ObjectModelHelpers.CreateInMemoryProject(projectContents).GetAllGlobs();
 
-            var uberGlob = new CompositeGlob(getAllGlobsResult.Select(r => r.MsBuildGlob).ToImmutableArray());
+            var uberGlob = new CompositeGlob(getAllGlobsResult.Select(r => r.MSBuildGlob).ToImmutableArray());
 
             foreach (var matchingString in stringsThatShouldMatch)
             {
@@ -3770,8 +3770,8 @@ namespace Microsoft.Build.UnitTests.OM.Definition
 
                 foreach (var globResult in project.GetAllGlobs())
                 {
-                    globResult.MsBuildGlob.IsMatch("a.cs").ShouldBeTrue();
-                    globResult.MsBuildGlob.IsMatch(absoluteFile).ShouldBeTrue();
+                    globResult.MSBuildGlob.IsMatch("a.cs").ShouldBeTrue();
+                    globResult.MSBuildGlob.IsMatch(absoluteFile).ShouldBeTrue();
                 }
             }
         }
