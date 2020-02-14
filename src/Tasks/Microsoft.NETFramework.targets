@@ -1,12 +1,12 @@
 ﻿<!--
 ***********************************************************************************************
-Microsoft.NetFramework.targets
+Microsoft.NETFramework.targets
 
 WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
           created a backup copy.  Incorrect changes to this file will make it
           impossible to load or build your projects from the command-line or the IDE.
 
-This file contains .net framework specific properties, items and targets. They are factored into a Microsoft.NETFramework.targets and Microsoft.NetFramework.props
+This file contains .NET Famework specific properties, items and targets. They are factored into a Microsoft.NETFramework.targets and Microsoft.NETFramework.props
 these two files are used to encapsulate the multi-targeting and framework specific build process.
 
 Copyright (C) Microsoft Corporation. All rights reserved.
@@ -32,12 +32,12 @@ Copyright (C) Microsoft Corporation. All rights reserved.
    <Choose>
       <When Condition="'$(MSBuildAssemblyVersion)' == ''">
          <PropertyGroup>
-            <NetFrameworkTargetsPath>$(MSBuildFrameworkToolsPath)\Microsoft.NETFramework.targets</NetFrameworkTargetsPath>
+            <NETFrameworkTargetsPath>$(MSBuildFrameworkToolsPath)\Microsoft.NETFramework.targets</NETFrameworkTargetsPath>
          </PropertyGroup>
       </When>
       <Otherwise>
          <PropertyGroup>
-            <NetFrameworkTargetsPath>$(MSBuildToolsPath)\Microsoft.NETFramework.CurrentVersion.targets</NetFrameworkTargetsPath>
+            <NETFrameworkTargetsPath>$(MSBuildToolsPath)\Microsoft.NETFramework.CurrentVersion.targets</NETFrameworkTargetsPath>
          </PropertyGroup>
       </Otherwise>
    </Choose>
@@ -47,34 +47,34 @@ Copyright (C) Microsoft Corporation. All rights reserved.
            Overrides for the Microsoft.NETFramework.targets extension targets.  Used to make sure that only the imports we specify
            (hard-coded to 4.0 locations) are used, not the 12.0 locations that would be used by default.
        -->
-      <ImportByWildcardBefore40MicrosoftNetFrameworkTargets Condition="'$(ImportByWildcardBefore40MicrosoftNetFrameworkTargets)' == ''">$(ImportByWildcardBeforeMicrosoftNetFrameworkTargets)</ImportByWildcardBefore40MicrosoftNetFrameworkTargets>
-      <ImportByWildcardBefore40MicrosoftNetFrameworkTargets Condition="'$(ImportByWildcardBefore40MicrosoftNetFrameworkTargets)' == ''">true</ImportByWildcardBefore40MicrosoftNetFrameworkTargets>
+      <ImportByWildcardBefore40MicrosoftNETFrameworkTargets Condition="'$(ImportByWildcardBefore40MicrosoftNETFrameworkTargets)' == ''">$(ImportByWildcardBeforeMicrosoftNETFrameworkTargets)</ImportByWildcardBefore40MicrosoftNETFrameworkTargets>
+      <ImportByWildcardBefore40MicrosoftNETFrameworkTargets Condition="'$(ImportByWildcardBefore40MicrosoftNETFrameworkTargets)' == ''">true</ImportByWildcardBefore40MicrosoftNETFrameworkTargets>
 
-      <ImportByWildcardAfter40MicrosoftNetFrameworkTargets Condition="'$(ImportByWildcardAfter40MicrosoftNetFrameworkTargets)' == ''">$(ImportByWildcardAfterMicrosoftNetFrameworkTargets)</ImportByWildcardAfter40MicrosoftNetFrameworkTargets>
-      <ImportByWildcardAfter40MicrosoftNetFrameworkTargets Condition="'$(ImportByWildcardAfter40MicrosoftNetFrameworkTargets)' == ''">true</ImportByWildcardAfter40MicrosoftNetFrameworkTargets>
+      <ImportByWildcardAfter40MicrosoftNETFrameworkTargets Condition="'$(ImportByWildcardAfter40MicrosoftNETFrameworkTargets)' == ''">$(ImportByWildcardAfterMicrosoftNETFrameworkTargets)</ImportByWildcardAfter40MicrosoftNETFrameworkTargets>
+      <ImportByWildcardAfter40MicrosoftNETFrameworkTargets Condition="'$(ImportByWildcardAfter40MicrosoftNETFrameworkTargets)' == ''">true</ImportByWildcardAfter40MicrosoftNETFrameworkTargets>
 
-      <ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets)' == ''">$(ImportUserLocationsByWildcardBeforeMicrosoftNetFrameworkTargets)</ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets>
-      <ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets)' == ''">true</ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets>
+      <ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets)' == ''">$(ImportUserLocationsByWildcardBeforeMicrosoftNETFrameworkTargets)</ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets>
+      <ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets)' == ''">true</ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets>
 
-      <ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets)' == ''">$(ImportUserLocationsByWildcardAfterMicrosoftNetFrameworkTargets)</ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets>
-      <ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets)' == ''">true</ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets>
+      <ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets)' == ''">$(ImportUserLocationsByWildcardAfterMicrosoftNETFrameworkTargets)</ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets>
+      <ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets)' == ''">true</ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets>
 
-      <ImportByWildcardBeforeMicrosoftNetFrameworkTargets>false</ImportByWildcardBeforeMicrosoftNetFrameworkTargets>
-      <ImportByWildcardAfterMicrosoftNetFrameworkTargets>false</ImportByWildcardAfterMicrosoftNetFrameworkTargets>
-      <ImportUserLocationsByWildcardBeforeMicrosoftNetFrameworkTargets>false</ImportUserLocationsByWildcardBeforeMicrosoftNetFrameworkTargets>
-      <ImportUserLocationsByWildcardAfterMicrosoftNetFrameworkTargets>false</ImportUserLocationsByWildcardAfterMicrosoftNetFrameworkTargets>
+      <ImportByWildcardBeforeMicrosoftNETFrameworkTargets>false</ImportByWildcardBeforeMicrosoftNETFrameworkTargets>
+      <ImportByWildcardAfterMicrosoftNETFrameworkTargets>false</ImportByWildcardAfterMicrosoftNETFrameworkTargets>
+      <ImportUserLocationsByWildcardBeforeMicrosoftNETFrameworkTargets>false</ImportUserLocationsByWildcardBeforeMicrosoftNETFrameworkTargets>
+      <ImportUserLocationsByWildcardAfterMicrosoftNETFrameworkTargets>false</ImportUserLocationsByWildcardAfterMicrosoftNETFrameworkTargets>
    </PropertyGroup>
 
    <ImportGroup Condition="'$(MSBuildAssemblyVersion)' == ''">
-      <Import Project="$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore\*" Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNetFrameworkTargets)' == 'true' and exists('$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore')"/>
-      <Import Project="$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore\*" Condition="'$(ImportByWildcardBefore40MicrosoftNetFrameworkTargets)' == 'true' and exists('$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore')"/>
+      <Import Project="$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore\*" Condition="'$(ImportUserLocationsByWildcardBefore40MicrosoftNETFrameworkTargets)' == 'true' and Exists('$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore')"/>
+      <Import Project="$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore\*" Condition="'$(ImportByWildcardBefore40MicrosoftNETFrameworkTargets)' == 'true' and Exists('$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportBefore')"/>
    </ImportGroup>
 
-   <Import Project="$(NetFrameworkTargetsPath)" />
+   <Import Project="$(NETFrameworkTargetsPath)" />
 
    <ImportGroup Condition="'$(MSBuildAssemblyVersion)' == ''">
-      <Import Project="$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter\*" Condition="'$(ImportByWildcardAfter40MicrosoftNetFrameworkTargets)' == 'true' and exists('$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter')"/>
-      <Import Project="$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter\*" Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNetFrameworkTargets)' == 'true' and exists('$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter')"/>
+      <Import Project="$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter\*" Condition="'$(ImportByWildcardAfter40MicrosoftNETFrameworkTargets)' == 'true' and Exists('$(MSBuildExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter')"/>
+      <Import Project="$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter\*" Condition="'$(ImportUserLocationsByWildcardAfter40MicrosoftNETFrameworkTargets)' == 'true' and Exists('$(MSBuildUserExtensionsPath)\4.0\Microsoft.NETFramework.targets\ImportAfter')"/>
    </ImportGroup>
 
 </Project>
