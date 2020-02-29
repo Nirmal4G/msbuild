@@ -1,0 +1,23 @@
+<!--
+***********************************************************************************************
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Use this syntax for only MSBuild versions above '15.0', since, 'Sdk' feature is supported only after v15! -->
+ <ImportGroup Condition="'$(MSBuildAssemblyVersion)' &gt;= '15.0'">
+  <Import Sdk="Microsoft.Build.Sdk" Project="$(MSBuildThisFile)" />
+ </ImportGroup>
+
+ <ImportGroup Condition="'$(MSBuildAssemblyVersion)' &lt; '15.0'">
+  <Import Project="$(MSBuildSDKsPath)\Microsoft.Build.Sdk\Sdk\$(MSBuildThisFile)" Condition="Exists('$(MSBuildSDKsPath)\Microsoft.Build.Sdk\')" />
+  <Import Project="$(MSBuildExtensionsPath)\Sdks\Microsoft.Build.Sdk\Sdk\$(MSBuildThisFile)" Condition="!Exists('$(MSBuildSDKsPath)\Microsoft.Build.Sdk\') and Exists('$(MSBuildExtensionsPath)\Sdks\Microsoft.Build.Sdk\')" />
+ </ImportGroup>
+
+</Project>
