@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--Copyright, Microsoft Corporation, All rights reserved.-->
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
 <ProjectSchemaDefinitions
     xmlns="http://schemas.microsoft.com/build/2009/properties">
 
@@ -44,13 +43,13 @@
       DisplayName="Media file"
       ItemType="Content">
     </ContentType>
-    
+
     <ContentType
       Name="Image"
       DisplayName="Image file"
       ItemType="Content">
     </ContentType>
-    
+
     <ContentType
       Name="EmbeddedResource"
       DisplayName="Embedded resource"
@@ -136,4 +135,3 @@
     <FileExtension Name=".woff" ContentType="Font" />
     <FileExtension Name=".eot" ContentType="Font" />
 </ProjectSchemaDefinitions>
-

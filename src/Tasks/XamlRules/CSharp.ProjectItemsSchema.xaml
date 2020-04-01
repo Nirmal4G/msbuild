@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--Copyright, Microsoft Corporation, All rights reserved.-->
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
 <ProjectSchemaDefinitions
     xmlns="http://schemas.microsoft.com/build/2009/properties">
 
@@ -11,6 +10,5 @@
 
     <ItemType Name="Compile" DisplayName="C# compiler"/>
 
-	<FileExtension Name=".cs" ContentType="CSharpFile"/>
+  <FileExtension Name=".cs" ContentType="CSharpFile"/>
 </ProjectSchemaDefinitions>
-
