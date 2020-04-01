@@ -12,6 +12,23 @@ indent_style = space
 insert_final_newline = false
 trim_trailing_whitespace = true
 
+# JSON files
+[*.{json,slnf}]
+indent_size = 2
+
+# Markdown files
+[*.md]
+indent_size = 2
+
+# Bash scripts
+[*.sh]
+indent_size = 2
+
+# MSBuild Solution files
+[*.sln]
+tab_width = 4
+indent_style = tab
+
 # MSBuild XML Build files
 [*.{props,targets,tasks,overridetasks}]
 indent_size = 2
